@@ -38,13 +38,15 @@ namespace Luval.IA.Complexity
             services.AddSingleton<FlightBookingRecognizer>();
 
             // Register the BookingDialog.
-            services.AddSingleton<BookingDialog>();
+            //services.AddSingleton<BookingDialog>();
+            services.AddSingleton<ComplexityDialog>();
 
             // The MainDialog that will be run by the bot.
-            services.AddSingleton<MainDialog>();
+            //services.AddSingleton<MainDialog>();
 
             // Create the bot as a transient. In this case the ASP Controller is expecting an IBot.
-            services.AddTransient<IBot, DialogAndWelcomeBot<MainDialog>>();
+            //services.AddTransient<IBot, DialogAndWelcomeBot<MainDialog>>();
+            services.AddTransient<IBot, ComplexityBot<ComplexityDialog>>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
