@@ -33,5 +33,10 @@ namespace Luval.IA.Complexity.Bots
                 }
             }
         }
+
+        protected override Task OnMessageActivityAsync(ITurnContext<IMessageActivity> turnContext, CancellationToken cancellationToken)
+        {
+            return base.OnMessageActivityAsync(turnContext, cancellationToken);
+        }
     }
 }
